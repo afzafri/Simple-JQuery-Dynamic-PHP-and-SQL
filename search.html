@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Search</title>
+<!-- include javascript file -->
+<script src="./scripts/jquery.js"></script>
+<script src="./scripts/alertify.min.js"></script>
+<script src="./scripts/script.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="./css/themes/default.min.css"/>
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="./css/themes/semantic.min.css"/>
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="./css/themes/bootstrap.min.css"/>
+
+</head>
+<body>
+
+<h1>Search Data</h1>
+<form method="post" id="searchForm">
+Search Name : <input type="text" name="name"> <br>
+<input type="button" id="searchBut" value="Search">
+</form>
+
+<!-- style for the table, nothing important -->
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+</style>
+
+<!-- 
+Display list of search result
+Javascript will do the process and 
+display here
+-->
+
+<div id="listSearch"></div>
+</table>
+
+</body>
+</html>

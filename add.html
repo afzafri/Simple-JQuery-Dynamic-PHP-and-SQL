@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Add Data</title>
+<!-- include javascript file -->
+<script src="./scripts/jquery.js"></script>
+<script src="./scripts/alertify.min.js"></script>
+<script src="./scripts/script.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="./css/themes/default.min.css"/>
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="./css/themes/semantic.min.css"/>
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="./css/themes/bootstrap.min.css"/>
+</head>
+<body>
+
+<h1>Insert Data</h1>
+<form method="post" id="addForm">
+Name : <input type="text" id="name" name="name"> <br>
+Age : <input type="text" id="age" name="age"><br><br>
+<!--<input type="button" onClick="insertDat(this.form.name.value , this.form.age.value)" value="Submit">-->
+<input type="button" id="add" value="Submit">
+</form>
+
+<!-- 
+Display status
+Javascript will display here
+-->
+<div id="detailsSub"></div>
+
+</body>
+</html>
