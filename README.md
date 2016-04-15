@@ -2,8 +2,10 @@
 Insert,search,list data from DB dynamically using JQuery and PHP
 
 #Features
-1. Using the JQuery.js library
+1. Using the JQuery.js library 
+   - https://jquery.com/
 2. alertify.js is used for interactive notifications
+   - http://alertifyjs.com/
 
 #Usage
 1. Create a new database name "data"
