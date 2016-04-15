@@ -14,6 +14,7 @@ $(document).ready(function(){
 	//search data
 	$('#searchBut').click(function(){
 		
+		$('#listSearch').empty();
 		var search = "option=search&"+$('#searchForm').serialize();
 		
 		$.post("process.php" , search , function(data){
