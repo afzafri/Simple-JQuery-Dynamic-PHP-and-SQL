@@ -14,4 +14,4 @@ Insert,search,list data from DB dynamically using JQuery and PHP
   - AGE (INT)
 4. Drag and drop all files in your webserver/localhost
 
-#Nothing special, just for personal future references. 
+##Nothing special, just for personal future references. 
