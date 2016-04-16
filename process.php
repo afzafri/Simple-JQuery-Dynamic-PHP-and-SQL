@@ -124,6 +124,69 @@ if( $_POST['option'] == "list" )
 
 }
 
+//list delete data
+if( $_POST['option'] == "listdelete" )
+{
+	
+	echo "
+	
+	<tr>
+	<th>ID</th>
+	<th>NAME</th>
+	<th>AGE</th>
+	<th>DELETE</th>
+	</tr>
+	
+	";
+	try
+	{
+		$stmt = $conn->prepare("SELECT * FROM JSDATA");
+		$stmt->execute();
+		
+		while($result = $stmt->fetch(PDO::FETCH_ASSOC))
+		{
+			$id = $result['ID'];
+			$name = $result['NAME'];
+			$age = $result['AGE'];
+			
+			echo "
+			<tr>
+			<td>$id</td>
+			<td>$name</td>
+			<td>$age</td>
+			<td><button name='delBut' id='delBut' value='$id'><img src='./images/del.png' width='15px' title='Delete'/></button></td>
+			</tr>
+			";
+		}
+		
+	}
+	catch(PDOException $e)
+	{
+		echo "Connection Error : " . $e->getMessage();
+	}
+
+}
+
+//delete data
+if( $_POST['option'] == "delete" )
+{
+	
+	$id = $_POST['id'];
+	
+	try
+	{
+		$stmt = $conn->prepare("DELETE FROM JSDATA WHERE ID=?");
+		$stmt->execute(array($id));
+		
+		
+	}
+	catch(PDOException $e)
+	{
+		echo "Connection Error : " . $e->getMessage();
+	}
+
+}
+
 
 $conn = null;
 
