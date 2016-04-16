@@ -64,32 +64,50 @@ $(document).ready(function(){
 	});	
 		
 	
-	
-	
-	/*
-	//list all data auto refresh
+	//listdelete data
 	$(function(){
-		
-		if($('body').is('#ListAllDat')){
+		if($('body').is('#ListAllDel')){
 			
-			var listall = "option=list";
+			$('.overlay').show();
+			$('.sk-circle').show();
 			
-			setInterval(function(){
+			var listall = "option=listdelete";
+			
+			$.post("process.php", listall, function(data){
 				
-				$('#listAll').empty();
-				$.post("process.php", listall, function(data){
+				$('.overlay').hide();
+				$('.sk-circle').hide();
 				
-				$('#listAll').append(data);
+				$('#listDel').append(data);
 				alertify.success("All data loaded");
 				});
-				
-			},3000);
-			
-				
 		}
 		
-	});	
-	*/
+	});
+	
+	$(document).on('click', '#delBut', function() {
+		
+		var id = $(this).val();
+		
+		alertify.confirm('Are you sure?',function(){
+		
+			$('.overlay').show();
+			$('.sk-circle').show();
+			
+			var deleted = "option=delete&id="+id;
+			$.post("process.php", deleted, function(data){
+					
+					$('.overlay').hide();
+					$('.sk-circle').hide();
+					
+					alertify.success("Data deleted");
+					});
+					
+			location.reload();
+			
+		});
+	
+    });
 	
 });
 
