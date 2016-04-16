@@ -6,6 +6,9 @@ Insert,search,list data from DB dynamically using JQuery and PHP
    - https://jquery.com/
 2. alertify.js is used for interactive notifications
    - http://alertifyjs.com/
+3. Loading animation
+   - http://tobiasahlin.com/spinkit/
+   - use this animation combined with jquery hide() and show() function
 
 #Usage
 1. Create a new database name "data"
