@@ -1,5 +1,5 @@
 # Simple-JQuery-Dynamic-PHP-and-SQL
-Insert,search,list data from DB dynamically using JQuery and PHP
+Insert,search,list,delete and update data from DB dynamically using JQuery and PHP
 
 #Features
 1. Using the JQuery.js library 
@@ -13,10 +13,14 @@ Insert,search,list data from DB dynamically using JQuery and PHP
 #Usage
 1. Create a new database name "data"
 2. Create new table name "JSDATA"
-3. Create 3 columns : 
+3. Create 6 columns : 
   - ID (INT,PK and auto increment)
   - NAME (VARCHAR)
   - AGE (INT)
+  - IC (VARCHAR)
+  - DOB (DATE)
+  - ADDRESS (VARCHAR)
+  - 
 4. Drag and drop all files in your webserver/localhost
 
 ##Nothing special, just for personal future references. 
