@@ -62,28 +62,83 @@ $(document).ready(function(){
 		}
 		
 	});	
-		
 	
-	//listdelete data
-	$(function(){
-		if($('body').is('#ListAllDel')){
-			
-			$('.overlay').show();
-			$('.sk-circle').show();
-			
-			var listall = "option=listdelete";
-			
-			$.post("process.php", listall, function(data){
+	//view details data
+	$(document).on('click', '#detailsBut', function() {
+		
+		var id = $(this).val();
+		
+		
+		$('.overlay').show();
+		$('.sk-circle').show();
+		
+		var viewd = "option=viewdetails&id="+id;
+		$.post("process.php", viewd, function(data){
 				
 				$('.overlay').hide();
 				$('.sk-circle').hide();
 				
-				$('#listDel').append(data);
-				alertify.success("All data loaded");
-				});
-		}
+				$('#listAll').hide();
+				$('#viewDetails').append(data);
+				
+				alertify.success("Data loaded");
+		});
+		
+    });
+	
+		//update details data
+	$(document).on('click', '#updateBut', function() {
+		
+		var id = $(this).val();
+		
+		
+		$('.overlay').show();
+		$('.sk-circle').show();
+		
+		var updated = "option=updatedetails&id="+id;
+		$.post("process.php", updated, function(data){
+				
+				$('.overlay').hide();
+				$('.sk-circle').hide();
+				
+				$('#listAll').hide();
+				$('#updateDetails').append(data);
+				
+				alertify.success("Data loaded");
+		});
+		
+    });
+	
+	//submit updated data
+	$(document).on('click', '#update', function() {
+		
+		$('.overlay').show();
+		$('.sk-circle').show();
+		
+		var upd = "option=updated&"+$('#updateForm').serialize();
+		
+		$.post("process.php" , upd , function(data){
+			
+			$('.overlay').hide();
+			$('.sk-circle').hide();
+			
+			alertify.success("Data updated");	
+			
+		});
 		
 	});
+	
+	//click back button
+	$(document).on('click', '#backBut', function() {
+	
+		$('#viewDetails').empty();
+		$('#updateDetails').empty();
+		//$('#listAll').show();
+		
+		location.reload();
+		
+    });
+	
 	
 	$(document).on('click', '#delBut', function() {
 		
@@ -109,5 +164,6 @@ $(document).ready(function(){
 	
     });
 	
+	
+	
 });
-
